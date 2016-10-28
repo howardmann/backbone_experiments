@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Backbone views</title>
+</head>
+<body>
+
+  <div id="container-movie"></div>
+
+  <!-- HM. We write a js script within our html with type of text/template which will mean the javascript engine will ignore it. We do this so we can write erb style views in our html -->
+  <script type="text/template" id="template-movie">
+    Title (using templates): <%=title%>
+  </script>
+
+
+  <!-- Our backbone dependancies -->
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/vendor/underscore.js"></script>
+  <script src="js/vendor/backbone.js"></script>
+  <!-- <script src="js/view_intro.js"></script> -->
+  <script src="js/view_render.js"></script>
+</body>
+</html>
