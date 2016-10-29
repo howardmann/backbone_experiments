@@ -27,6 +27,11 @@ var ToDoItem = Backbone.Model.extend({
   }
 });
 
+// Collection class
+var ToDoList = Backbone.Collection.extend({
+  model: ToDoItem
+});
+
 // View class
 var ToDoView = Backbone.View.extend({
   // Optional id for the div element
@@ -80,6 +85,13 @@ var toDoItem1 = new ToDoItem();
 toDoItem1.set({'name':'beer','quantity': 3, 'price': 20.00});
 
 var toDoItem2 = new ToDoItem({'name':'chips','quantity': 1, 'price': 5.00});
+
+// Instantiate a new collection
+var toDoList = new ToDoList();
+toDoList.reset([
+  {'name':'tea','quantity': 1, 'price': 5.00},
+  {'name':'toast','quantity': 3, 'price': 20.00}
+]);
 
 // Instantiate a new view class passing in the relevant model and call render to set the views .el value
 var toDoView1 = new ToDoView({model: toDoItem1});
