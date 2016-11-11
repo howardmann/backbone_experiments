@@ -3,7 +3,6 @@ var app = app || {};
 app.Comment = Backbone.Model.extend({
   defaults: {
     description: 'description',
-    likes: 0,
-    date: new Date().toDateString()
+    date: new Date().toLocaleDateString('en-US',{hour: 'numeric', minute: 'numeric'})
   }
 });
