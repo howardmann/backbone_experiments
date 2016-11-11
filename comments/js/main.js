@@ -1,12 +1,8 @@
 var app = app || {};
 
 $(document).ready(function() {
-  app.comments = new app.Comments([
-    {description: 'Poo and wee'},
-    {description: 'Wee'},
-    {description: 'Vomit'},
-    {description: 'Apple'}
-  ]);
+  app.comments = new app.Comments();
+  app.comments.fetch();
 
   app.commentsFormView = new app.CommentsFormView({
     collection: app.comments

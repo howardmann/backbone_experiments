@@ -15,6 +15,7 @@ app.CommentView = Backbone.View.extend({
 
   removeComment: function(){
     this.remove();
+    this.model.destroy();
   },
 
   showEditComment: function(){
@@ -30,8 +31,8 @@ app.CommentView = Backbone.View.extend({
     var time = this.$('.edit-time').val();
     if (time.length < 1 || text.length < 1) {return;};
     this.model.updateComment(text, time);
+    this.model.save();
   },
-
 
   template: _.template('<h2>CommentView</h2><p><%=description%> | Date: <%=date%></p><button class="remove">Remove</button><button class="show-edit">Edit</button><form class="show-edit-form" style="display:none;"><input type="text" class="edit-description" placeholder="description"></input><input type="time" placeholder="wat" class="edit-time"></input><input type="submit" class="submit-comment"></input></form>'),
 

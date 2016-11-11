@@ -14,6 +14,7 @@ app.CommentsFormView = Backbone.View.extend({
 
     var comment = new app.Comment({'description':$text.val()});
     this.collection.add(comment);
+    comment.save();
     $text.val('');
   },
 

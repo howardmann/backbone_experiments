@@ -19,11 +19,12 @@ app.CommentsView = Backbone.View.extend({
   },
 
   removeComment: function(comment){
-    this.collection.remove(comment)
+    this.collection.remove(comment);
   },
 
   addOne: function(comment){
     var commentView = new app.CommentView({model: comment});
+    commentView.save;
     this.$('.comments-view-content').append(commentView.render().el);
   },
 
