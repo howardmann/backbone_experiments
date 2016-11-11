@@ -4,5 +4,10 @@ app.Comment = Backbone.Model.extend({
   defaults: {
     description: 'description',
     date: new Date().toLocaleDateString('en-US',{hour: 'numeric', minute: 'numeric'})
+  },
+
+  updateDescription: function(comment){
+    this.set({'description': comment});
   }
+
 });
