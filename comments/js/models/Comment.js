@@ -7,7 +7,8 @@ var formatDate = function(date){
 app.Comment = Backbone.Model.extend({
   defaults: {
     description: 'description',
-    date: formatDate(new Date())
+    date: formatDate(new Date()),
+    likes: 0
   },
 
   updateComment: function(comment, time){
@@ -15,6 +16,10 @@ app.Comment = Backbone.Model.extend({
     var date = new Date();
     date.setHours(time[0],time[1]);
     this.set({'description': comment, 'date': formatDate(date)});
+  },
+
+  likeOne: function(){
+    this.set({'likes': this.get('likes') + 1});
   }
 
 });
